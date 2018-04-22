@@ -1,0 +1,47 @@
+.container {
+  width: 90vw;
+  height: 90vh;
+  margin: 0 auto;
+  /*overflow: hidden;*/
+}
+
+.container form input, .container form select {
+  width: 100%;
+}
+
+div.window {
+  /*padding-top: 50px;*/
+}
+
+div#main {
+  height: 100%;
+}
+
+
+div#stockForm {
+  height: 100%;
+}
+
+div.card {
+	display: grid;
+	grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
+}
+
+@media only screen and (max-width: 680px) {
+	div.card {
+		display:grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		padding-bottom: 2em;
+	}
+	div.cardName {
+		grid-column-start: 1;
+		grid-column-end: 4;
+		font-weight: 900;
+	}
+	div.cardBarcode {
+		grid-column-start: 1;
+		grid-column-end: 4;
+	}
+}
+

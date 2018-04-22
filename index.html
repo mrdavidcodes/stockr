@@ -9,9 +9,10 @@
 
   <!-- CSS
  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="lib/css/normalize.css">
-  <link rel="stylesheet" href="lib/css/skeleton.css">   
-  <link rel="stylesheet" href="lib/css/style.css"> 
+  <link rel="stylesheet" href="public/lib/css/normalize.css">
+  <link rel="stylesheet" href="public/lib/css/skeleton.css">   
+  <link rel="stylesheet" href="public/lib/css/style.css"> 
+
   
   <title>Stockr App</title>
   </head>
@@ -19,27 +20,91 @@
 
 
   <body>
+
     <div class="container">
-      <h1>stockr</h1>
-      <form>
+      <div id="main" class="window">
+      <div class="row">
+        <h1>stockr</h1>
+      </div>
+      <div class="stockItemsList row">
+        <ul class="stockList"></ul>
+        <a href="#stockForm" class="button button-primary">Add Stock</a>
+      </div>
 
-        <label for="productName">Product Name</label> 
-       <input type="text" id="productName" placeholder="All Gold Tomato Sauce" />
+      <div id="stockForm" class="window">
+      <div class="row">
+        <h1>stockr</h1>
+      </div>
 
-       <label for="productCode">Product Code</label>
-       <input type="number" id="productCode" placeholder="900123456789" />
 
-       <label for="productQuantity">Quantity (Units)</label>
-       <input type="number" id="productQuantity" placeholder="24"/>
 
-        <label for="productBBDate">Best Before | Expiry Date</label>
-        <input type="date" id="productBBDate">
+      <form class="addItems"> 
+          <div class="row">
+            <div class="twelve columns">
+             <label for="productName">Product Name</label> 
+             <input type="text" id="productName" placeholder="All Gold Tomato Sauce">
+            </div>
+          </div>
 
-      </form>
+          <div class="row">
+            <div class="twelve columns">
+             <label for="productCode">Product Code</label>
+             <input type="number" id="productCode" placeholder="900123456789">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="six columns">
+              <label for="productPackSize">Pack Size</label>
+              <input type="number" id="productPackSize" placeholder="12">
+            </div>
+            <div class="six columns">
+             <label for="productQuantity">Quantity</label>
+             <input type="number" id="productQuantity" placeholder="24">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="twelve columns">
+              <label for="productBBDate">Best Before | Expiry Date</label>
+              <input type="date" id="productBBDate">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="six columns">
+              <label for="productDropNumber">Storeroom Drop</label>
+              <select id="productDropNumber">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+            <div class="six columns">
+              <label for="productDropShelf">Shelf Number</label>
+              <select id="productDropShelf">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+          </div>
+
+          <input type="submit" value="+ Add Item" class="button-primary">
+					<input type="button" value="Save" id="btnSave" class="button-primary">
+          <a href="#main" class="button button-primary">Back</a>
+        </form>
+      </div> <!-- EOF div#form -->
     </div>
 
-    <script src="lib/js/app.js"></script>
-
+    <script src="public/lib/js/main.js"></script>
   </body>
 
 
