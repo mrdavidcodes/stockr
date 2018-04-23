@@ -10,13 +10,13 @@ const productDropShelf = document.querySelector('#productDropShelf');
 const dbKey = 'stockr';
 const addItems = document.querySelector('.addItems');
 const stockList = document.querySelector('.stockList');
-let items = JSON.parse(localStorage.getItem(dbKey));
-if (items === null) {
-	items = [];
+const items = [];
+if (localStorage.getItem(dbKey) === null) {
 	localStorage.setItem(dbKey, items);
+	console.log(`New LocalStorage ===> ${items}`);
 	populateList(items);	
 }
-
+console.log(`ItemsArray from LS ===> ${items}`);
 populateList(items);
 
 function addItem(e) {
@@ -30,8 +30,8 @@ function addItem(e) {
     dropNumber : productDropNumber.value,
     dropShelf : productDropShelf.value
   };
+  console.log(item);
   items.push(item);
-  console.log(items);
   populateList(items);
   saveToLocalStorage(items);
   this.reset();
@@ -46,7 +46,7 @@ function populateList(items) {
 		let expireDate = Date.parse(items[i].expires);
 		let timeDiff = expireDate - todayDate;
 		let daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-		const expiresBuffer = 10;
+		const expiresBuffer = 30;
 
 
 		if (daysDiff <= expiresBuffer) {
@@ -60,6 +60,7 @@ function populateList(items) {
 			<div class="cardDays">In ${daysDiff} Days</div>
 			`;
 			parentDiv.appendChild(newDiv);
+			console.log(newDiv);
 		}
 	}
 }
